@@ -1,0 +1,259 @@
+body {
+    margin: 0;
+    font-family: system-ui;
+    background: linear-gradient(135deg, #0f0f1a, #1a1a2e);
+    color: white;
+    overflow: hidden;
+  }
+    
+  /* NAVBAR */
+  .navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.3);
+  }
+  
+  .nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .links a:hover {
+    color: violet;
+  }
+
+  /* jjjjjjjjjjjjjjjjjjjjjjjjjjjjjj */
+
+  .floating-images {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* click block na kare */
+    z-index: 0;
+  }
+  
+  .float {
+    position: absolute;
+    width: 80px;
+    opacity: 0.2;
+  }
+  
+  /* different positions */
+  .f1 { top: 10%; left: 10%; }
+  .f2 { top: 60%; left: 20%; }
+  .f3 { top: 30%; right: 15%; }
+  .f4 { bottom: 10%; right: 25%; }
+
+
+  /* jjjjjjjjjjjjjjjjjjjjjjjjjjjj */ 
+
+  
+  /* HERO */
+  .hero {
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    text-align: center;
+  }
+  
+  #title {
+    font-size: 3rem;
+    text-shadow: 0 0 20px purple;
+  }
+  
+  .subtitle {
+    opacity: 0.7;
+  }
+  
+  /* WISHES */
+  .wishes {
+    height: 45vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .slider {
+    display: flex;
+    gap: 30px;
+    width: max-content; /* IMPORTANT FIX */
+  }
+  
+  .wish {
+    width: 250px;
+    height: 150px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+  }
+  
+  .wish span {
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+  
+  .wish:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(128,0,128,0.4);
+  }
+
+  .wishes::before,
+  .wishes::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+  }
+  
+  .wishes::before {
+    left: 0;
+    background: linear-gradient(to right, #0f0f1a, transparent);
+  }
+  
+  .wishes::after {
+    right: 0;
+    background: linear-gradient(to left, #1a1a2e, transparent);
+  }
+
+
+
+  /* fskfgbksdbfgksdkg */
+  
+
+  /* CAKE */
+  .cake {
+    position: fixed;
+    bottom: 20%;
+    right: 10%;
+    font-size: 40px;
+    z-index: 1;
+  }
+
+  #confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999; /* sabse upar */
+  }
+
+  
+
+  /* =========================
+    MOBILE (0–600px)
+========================= */
+@media (max-width: 600px) {
+
+    /* NAVBAR */
+    .nav-container {
+      padding: 10px 15px;
+    }
+  
+    .logo {
+      font-size: 14px;
+    }
+  
+    .links a {
+      margin-left: 10px;
+      font-size: 13px;
+    }
+  
+    /* HERO */
+    .hero {
+      height: 50vh;
+      margin-top: 60px;
+    }
+  
+    #title {
+      font-size: 1.8rem;
+    }
+  
+    .subtitle {
+      font-size: 0.9rem;
+    }
+  
+    /* WISHES */
+    .wishes {
+      height: auto;
+      padding: 20px 10px;
+    }
+  
+    .slider {
+      gap: 15px;
+    }
+  
+    .wish {
+      width: 180px;
+      height: 110px;
+      font-size: 0.9rem;
+    }
+  
+    .wish span {
+      font-size: 0.75rem;
+    }
+  
+    /* FLOATING IMAGES */
+    .float {
+      width: 50px;
+      opacity: 0.1;
+    }
+  }
+  
+  /* =========================
+     TABLET (600–1024px)
+  ========================= */
+  @media (min-width: 601px) and (max-width: 1024px) {
+  
+    #title {
+      font-size: 2.4rem;
+    }
+  
+    .wish {
+      width: 220px;
+      height: 130px;
+    }
+  
+    .float {
+      width: 65px;
+    }
+  }
+  
+  /* =========================
+     LARGE SCREEN (1024+)
+  ========================= */
+  @media (min-width: 1025px) {
+  
+    #title {
+      font-size: 3rem;
+    }
+  
+    .wish {
+      width: 250px;
+      height: 150px;
+    }
+  }
